@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
     box-sizing: border-box;
 }
 
@@ -37,6 +39,10 @@ textarea,
 button {
     font-family: inherit;
     font-size: inherit;
+}
+
+img {
+    user-select: none;
 }
 
 .section {
@@ -92,6 +98,7 @@ button {
 
     color: var(--primary-color);
 
+    user-select: none;
     cursor: pointer;
 }
 
@@ -375,6 +382,7 @@ button {
 /* ======== About ======== */
 
 .about {
+    padding-top: 56px;
 }
 
 .about-item,
@@ -806,5 +814,127 @@ button {
 .services-cta__btn {
     margin-top: 45px;
     min-width: 214px;
+    font-weight: 500;
+}
+
+/* ======== Teams ======== */
+
+.teams {
+}
+
+.teams__wrap {
+    text-align: center;
+}
+
+.teams__heading {
+    margin-top: 15px;
+}
+
+.teams-list {
+    margin-top: 45px;
+}
+
+.teams-list__row {
+    gap: 35px;
+}
+
+.teams-item {
+    --space: 16px;
+    padding: 0 var(--space);
+}
+
+.teams-item__image-wrap {
+    position: relative;
+    border-radius: 129.5px;
+}
+
+.teams-item__image-wrap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    height: 94%;
+    border-radius: inherit;
+}
+
+.teams-item__image-wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    width: calc(100% + (var(--space) * 2) + 8px);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.teams-item:nth-child(1) .teams-item__image-wrap::after {
+    background: linear-gradient(135deg, #90ccff 0%, #59a8eb 96%);
+}
+
+.teams-item:nth-child(1) .teams-item__image-wrap::before {
+    background-image: url(../img/teams-item-deco-1.svg);
+    background-position: bottom;
+}
+
+.teams-item:nth-child(2) .teams-item__image-wrap::after {
+    background: linear-gradient(135deg, #ff997e 0%, #f3752e 100%);
+}
+
+.teams-item:nth-child(2) .teams-item__image-wrap::before {
+    background-image: url(../img/teams-item-deco-2.svg);
+    background-position: 0 var(--space);
+}
+
+.teams-item:nth-child(3) .teams-item__image-wrap::after {
+    background: linear-gradient(135deg, #fabf3e 0%, #ffa14a 100%);
+}
+
+.teams-item:nth-child(3) .teams-item__image-wrap::before {
+    background-image: url(../img/teams-item-deco-3.svg);
+    background-position: bottom;
+}
+
+.teams-item:nth-child(4) .teams-item__image-wrap::after {
+    background: linear-gradient(135deg, #5bd6e2 0%, #00a7cc 100%);
+}
+
+.teams-item:nth-child(4) .teams-item__image-wrap::before {
+    background-image: url(../img/teams-item-deco-4.svg);
+    background-position: 0 var(--space);
+}
+
+.teams-item__image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    border-radius: inherit;
+}
+
+.teams-item__label {
+    margin-top: 34px;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #656689;
+}
+
+.teams-item__name {
+    margin-top: 14px;
+    font-size: 2.2rem;
+    font-family: "Sora", sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    color: #000958;
+}
+
+.teams-cta__btn {
+    margin-top: 48px;
+    min-width: 193px;
     font-weight: 500;
 }
